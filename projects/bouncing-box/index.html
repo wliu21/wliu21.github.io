@@ -48,19 +48,18 @@
 			var points;
 			var speed;
 			var direction;
-			var positionY;
-			var directionY;
-			var randNum = Math.random() * 150;
+			//var positionY;
+			//var directionY;
 			
 			position = 0;
-			positionY = 0;
+			//positionY = 0;
 			points = 0;
 			speed = 10;
 			direction = 1;
-			directionY = 1;
+			//directionY = 1;
 			
 			box.css('left', position);
-			box.css('top', positionY);
+			//box.css('top', positionY);
 			box.text(points);
 			
 			function update() {
@@ -68,8 +67,8 @@
 				position += speed * direction;
 				console.log("new position: " + position);
 				
-				positionY += speed * directionY;
-				console.log("new position: " + positionY)
+				//positionY += speed * directionY;
+				//console.log("new position: " + positionY)
 				
 				if(position >= boardWidth) {
 					console.log("Right Wall Hit");
@@ -83,31 +82,42 @@
 					console.log(direction);
 				}
 				
-				if(position >= boardHeight) {
-					console.log("Bottom Wall Hit");
-					direction = -1;
-					console.log(directionY);
-				}
+				//if(positionY >= boardHeight) {
+				//	console.log("Bottom Wall Hit");
+				//	direction = -1;
+				//	console.log(directionY);
+				//}
 				
-				else if(positionY < 0) {
-					console.log("Top Wall Hit");
-					directionY = 1;
-					console.log(directionY);
-				}
+				//else if(positionY < 0) {
+				//	console.log("Top Wall Hit");
+				//	directionY = 1;
+				//	console.log(directionY);
+				//}
 				
 				box.css('left', position);
 			};
-
-
 			
 			function handleBoxClick() {
 				// TODO 4 / 5
+				increasePoints();
+				increaseSpeed();
+				randomlyPositionBox();
+			};
+			
+			function increasePoints() {
 				points += 1;
 				box.text(points);
-				position = 0;
+			}
+			function increaseSpeed() {
 				speed += 3;
-			};
-
+			}
+			function randomlyPositionBox() {
+				var randNum = Math.random() * boardWidth;
+				var randNumb = Math.random() * boardHeight;
+				console.log(randNum, randNumb);
+				position = randNum;
+				//positionY = randNum;
+			}
 
 			//this executes the update function code every 50 milliseconds
 			setInterval(update, 50);
