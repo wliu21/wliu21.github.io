@@ -14,14 +14,18 @@
 			width: 125px;
 			height: 110px;
 			background: url(https://i.pinimg.com/originals/ab/a9/e0/aba9e0345a92a8fb79d5ea289aa124f5.gif);
+			display: block;
+			position: absolute;
+			top: 250px;
+			left: 150px;
+		}
+		
+		.score {
 			font-size: 350%;
 			text-align: center;
 			color: white;
-			display: block;
-			position: absolute;
-			top: 50px;
-			left: 150px;
 		}
+		
 		body {
 			background-image: url("https://media.giphy.com/media/3og0IFrHkIglEOg8Ba/giphy.gif");
 		}
@@ -30,7 +34,9 @@
 </head>
 <body class="board">
 	<!-- HTML for the box -->
-	<div class="box">?</div>
+	<div class="score"></div>
+	
+	<div class="box"></div>
 
 	<!-- BEGIN JAVASCRIPT -->
 	<script>
@@ -40,6 +46,7 @@
 
 			// jQuery stuff setup for you
 			var box = jQuery('.box');
+			var score = jQuery('.score');
 			var boardWidth = jQuery('.board').width();
 			var boardHeight = jQuery(window).height();
 	
@@ -60,7 +67,7 @@
 			
 			box.css('left', position);
 			//box.css('top', positionY);
-			box.text(points);
+			score.text(points);
 			
 			function update() {
 				// TODO 3 / 6 / 7 / 8
@@ -93,7 +100,7 @@
 				//	directionY = 1;
 				//	console.log(directionY);
 				//}
-				
+				box.css( "transform", "scaleX(" + direction+ ")" );
 				box.css('left', position);
 			};
 			
@@ -106,7 +113,7 @@
 			
 			function increasePoints() {
 				points += 1;
-				box.text(points);
+				score.text(points);
 			}
 			function increaseSpeed() {
 				speed += 3;
