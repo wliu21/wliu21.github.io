@@ -36,7 +36,7 @@ var init = function (window) {
     view.addChild(background);
 
     
-    var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q your mom!', 
+    var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q Rage Quit!', 
         '20px Arial',
         '#ccc', 'left');
     help.x = 10;

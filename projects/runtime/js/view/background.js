@@ -1,6 +1,6 @@
 var background = function (window) {
     var tree;
-    var buildings = [];
+    // var buildings = [];
     'use strict';
     
     window.opspark = window.opspark || {};
@@ -36,43 +36,50 @@ var background = function (window) {
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth, 500, "MidnightBlue");
-            background.addChild(backgroundFill);
+            //  var backgroundFill = draw.rect(canvasWidth, 500, "MidnightBlue");
             
+          ;
+      var backgroundimg = draw.bitmap('img/runtimebgimgblue.png');
+             backgroundimg.x = backgroundimg.y = 0;
+             backgroundimg.scaleX = canvasWidth;
+             backgroundimg.scaleY = canvasHeight;
+             background.addChild(backgroundimg)
+             backgroundimg.scaleX = canvasWidth / backgroundimg.width;
+            // background.addChild(backgroundFill);
             // TODO: 3 - Add a moon and starfield
             
            
-            var circle;
-                for(var i = 0; i<100; i++){
-                circle = draw.circle(10, 'white', 'LightGray', 2);
-                circle.x = canvasWidth*Math.random();
-                circle.y = groundY*Math.random();
-                background.addChild(circle);
-            } 
+            //var circle;
+            //    for(var i = 0; i<100; i++){
+            //    circle = draw.circle(10, 'white', 'LightGray', 2);
+            //   circle.x = canvasWidth*Math.random();
+            //    circle.y = groundY*Math.random();
+            //    background.addChild(circle);
+            //} 
             
            
-            var moon = draw.bitmap('img/moon.png');
-                moon.x = 0;
-                moon.y = 0;
-                moon.scaleX = .25;
-                moon.scaleY = .25;
-                background.addChild(moon);
+            // var moon = draw.bitmap('img/moon.png');
+            //     moon.x = 0;
+            //     moon.y = 0;
+            //     moon.scaleX = .25;
+            //     moon.scaleY = .25;
+            //     background.addChild(moon);
             
             // TODO: 5 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
-            var building;
-            for(var i=0; i<5; i++) {
-                var buildingHeight = Math.random() * 100;
-                building = draw.rect(75,buildingHeight,'LightGray','Black',1);
-                building.x = 200*i;
-                building.y = groundY-buildingHeight;
-                background.addChild(building);
-                buildings.push(building);
-            }
+            // var building;
+            // for(var i=0; i<5; i++) {
+            //     var buildingHeight = 500
+            //     building = draw.rect(75,buildingHeight,'LightGray','Black',1);
+            //     building.x = 200*i;
+            //     building.y = groundY-buildingHeight;
+            //     background.addChild(building);
+            //   // buildings.push(building);
+            // }
             
             
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap('img/tree.png');
+            tree = draw.bitmap('img/sirthisisair.png');
             tree.x = 900;
             tree.y = 200;
             background.addChild(tree);
@@ -95,17 +102,17 @@ var background = function (window) {
             // TODO 5: Part 2 - Parallax
             
             ///// use for statement to move all buildings
-            for (var i = 0; i<buildings.length; i++) {
-                var eachBuilding = buildings[i];
-                buildings[i].x = buildings[i].x - .25;
-                 if(buildings[i].x < -200) {
-                     buildings[i].x = canvasWidth;
-                 buildings[i].x = buildings[i].x - 1
-                 }
-            }
+            // for (var i = 0; i<buildings.length; i++) {
+            //     var eachBuilding = buildings[i];
+            //     buildings[i].x = buildings[i].x - .25;
+            //      if(buildings[i].x < -200) {
+            //          buildings[i].x = canvasWidth;
+            //      buildings[i].x = buildings[i].x - 1
+            //      }
+            // }
 
         }
-
+//rendering stuff
         background = new createjs.Container();
         background.resize = render;
         background.update = update;
@@ -124,3 +131,6 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = background;
 }
+
+//for music
+//https://www.w3schools.com/graphics/game_sound.asp
