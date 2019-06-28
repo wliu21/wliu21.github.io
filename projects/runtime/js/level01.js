@@ -16,20 +16,20 @@ var level01 = function (window) {
             number: 1, 
             speed: -3,
             gameItems: [
-                {type: 'laser',x:1200, y:groundY -140},
-                {type: 'laser',x:1900, y:groundY -140},
-                {type: 'laser',x:2400, y:groundY -140},
-                {type: 'lava',x:1500, y:groundY -0},
-                {type: 'lava',x:2500, y:groundY -0},
-                {type: 'lava',x:3500, y:groundY -0},
-                {type: 'lava',x:4500, y:groundY -0},
-                {type: 'saber',x:1600, y:groundY -50},
-                {type: 'saber',x:2700, y:groundY -50},
-                {type: 'saber',x:900, y:groundY -50},
-                {type: 'star' , x: 1500, y:groundY -135},
-                {type: 'star' , x: 600, y: groundY -135},
-                {type: 'star' , x: 2400, y:groundY -135},
-                {type: 'star' , x: 3600, y:groundY -135}
+                {type: 'laser',x:1200, y:groundY -130},
+                {type: 'laser',x:1900, y:groundY -130},
+                {type: 'laser',x:2400, y:groundY -130},
+                {type: 'lava',x:1500, y:groundY +10},
+                {type: 'lava',x:2500, y:groundY +10},
+                {type: 'lava',x:3500, y:groundY +10},
+                {type: 'lava',x:4500, y:groundY +10},
+                {type: 'saber',x:1600, y:groundY -115},
+                {type: 'saber',x:2700, y:groundY -115},
+                {type: 'saber',x:900, y:groundY -115},
+                {type: 'star' , x: 1500, y:groundY -155},
+                {type: 'star' , x: 600, y: groundY -155},
+                {type: 'star' , x: 2400, y:groundY -155},
+                {type: 'star' , x: 3600, y:groundY -155}
             ]
         };
         window.levelData = levelData;
@@ -174,14 +174,11 @@ createEnemy(1500, groundY-50);
 createEnemy(2000, groundY-50);
 createEnemy(2500, groundY-50);
 createEnemy(3000, groundY-50);
-
-
-
-
-
-
-
-
+createEnemy(5000, groundY-50);
+createEnemy(4000, groundY-50);
+createEnemy(6000, groundY-50);
+createEnemy(7000, groundY-50);
+createEnemy(8000, groundY-50);
 
     
 };
